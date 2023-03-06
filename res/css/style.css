@@ -49,6 +49,7 @@ body{
     position: relative;
     display: none;
     bottom: -150px;
+    cursor: pointer;
 }
 #counter{
     width: 100%;
