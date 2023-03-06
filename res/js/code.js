@@ -47,6 +47,7 @@ function TimerInterval(){
     }, 1000)
 }
 
+
 function MainInterval(){
     ImageOne.style.animation =  "PictureAppearAnimation 0.3s forwards";
     ImageTwo.style.animation =  "PictureAppearAnimation 0.3s forwards";
@@ -133,37 +134,38 @@ function MainInterval(){
             ImageNine.style.display = "none";
             DefeatLabel.innerHTML = "You ran out of time."
             TryAgainButton.style.display = "flex";
-
-
-
-            PlayButton.onmouseenter = () => {
-                PlayButton.style.transform = "none";
-                PlayButton.style.textShadow = "0px 0px 0px";
-                PlayButton.style.color = "darkred";
-            }
-
-
         }
 
         console.log(randomNum);
-    },500)
+    },415)
 }
+
+function TimeIncrease(){
+    timerPro++;
+    Timer.innerHTML = "Time: " + timerPro + "s";
+}
+
+
 PlayButton.onclick = () => {
     Play.style.display = "none";
     MainInterval();
     TimerInterval();
 }
+
 ImageOne.onclick = () => {
     ImageOne.style.display = "none";
     counterPro++;
     Score.innerHTML = "Score: " + counterPro;
-
+    TimeIncrease();
+    PlusDissapear();
 }
 
 ImageTwo.onclick = () => {
     ImageTwo.style.display = "none";
     counterPro++;
     Score.innerHTML = "Score: " + counterPro;
+    TimeIncrease();
+    PlusDissapear();
 
 }
 
@@ -171,6 +173,8 @@ ImageThree.onclick = () => {
     ImageThree.style.display = "none";
     counterPro++;
     Score.innerHTML = "Score: " + counterPro;
+    TimeIncrease();
+    PlusDissapear();
 
 }
 
@@ -178,12 +182,16 @@ ImageFour.onclick = () => {
     ImageFour.style.display = "none";
     counterPro++;
     Score.innerHTML = "Score: " + counterPro;
+    TimeIncrease();
+    PlusDissapear();
 }
 
 ImageFive.onclick = () => {
     ImageFive.style.display = "none";
     counterPro++;
     Score.innerHTML = "Score: " + counterPro;
+    TimeIncrease();
+    PlusDissapear();
 
 }
 
@@ -191,6 +199,8 @@ ImageSix.onclick = () => {
     ImageSix.style.display = "none";
     counterPro++;
     Score.innerHTML = "Score: " + counterPro;
+    TimeIncrease();
+    PlusDissapear();
 
 }
 
@@ -198,6 +208,8 @@ ImageSeven.onclick = () => {
     ImageSeven.style.display = "none";
     counterPro++;
     Score.innerHTML = "Score: " + counterPro;
+    TimeIncrease();
+    PlusDissapear();
 
 }
 
@@ -205,6 +217,8 @@ ImageEight.onclick = () => {
     ImageEight.style.display = "none";
     counterPro++;
     Score.innerHTML = "Score: " + counterPro;
+    TimeIncrease();
+    PlusDissapear();
 
 }
 
@@ -212,6 +226,8 @@ ImageNine.onclick = () => {
     ImageNine.style.display = "none";
     counterPro++;
     Score.innerHTML = "Score: " + counterPro;
+    TimeIncrease();
+    PlusDissapear();
 
 }
 

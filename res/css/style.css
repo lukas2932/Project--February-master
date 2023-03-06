@@ -27,6 +27,9 @@ body{
     padding: 10px;
     transition: 0.2s;
     box-shadow: 0 1px 100px; 
+    animation: ShadowAnimation 2s infinite ease-in;
+    display: flex;
+    justify-content: center;
 }
 .box:hover{
     background-color: rgba(0,0,0,0.15);
@@ -40,11 +43,12 @@ body{
 #ImageSeven,
 #ImageEight,
 #ImageNine{
-    width: 100%;
-    height: 100%;
-    display: none;
+    width: 50%;
+    height: 50%;
     transition: 0.1s;
     position: relative;
+    display: none;
+    bottom: -150px;
 }
 #counter{
     width: 100%;
@@ -58,58 +62,62 @@ body{
     order: 1;
 }
 #Avarage{
-    order: 3;
+    order: 2;
+
 }
 #Score{
-    order: 2;
-}
-@keyframes PictureAppearAnimation{
-    0%{
-        opacity: 0;
-        bottom: -100px;
-    }
-    20%{
-        opacity: 0.2;
-        bottom: -80px;
-    }
-    40%{
-        opacity: 0.4;
-        bottom: -60px;
-    }
-    60%{
-        opacity: 0.6;
-        bottom: -40px;
-    }
-    80%{
-        opacity: 0.8;
-        bottom: -20px;
-    }
-    100%{
-        opacity: 1;
-        bottom: 0;
-    }
+    order: 3;
 }
 #Play{
-    color: darkred;
-    width: 100vw;
-    height: 100vh;
+    width: 100%;
+    height: 100%;
     font-size: 250px;
     position: absolute;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    background-color: rgba(0,0,0,0.5);
     font-family: 'Kanit', sans-serif;
     bottom: 0px;
+    z-index: 1;
+}
+#canvas{
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0,0,0,0.5);
+    position: absolute;
+    z-index: -1;
 }
 #PlayButton{
+    color: darkred;
     transition: 0.2s;
     cursor: pointer;
+    z-index: 1;
+    display: flex;
+    width: auto;
+    height: auto;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    position: absolute;
+    border-radius: 20%;
+}
+#PlayButton::before{
+    content: "";
+    position: absolute;
+    z-index: -1;
+    width: 200%;
+    height: 0%;
+    background-color: rgba(240, 127, 127, 0.6);
+    transform: rotate(-45deg);
+    box-shadow: 0 0 10px;
+    color: brown
+}
+#PlayButton:hover::before{
+    animation: AnimationOne 0.7s forwards;
 }
 #PlayButton:hover{
     transform: scale(1.15);
-    color: brown;
     text-shadow: 0px 1px 20px;
 }
 #DefeatLabel,
@@ -133,5 +141,120 @@ body{
 #Timerplus{
     color: darkgreen;
     position: absolute;
-    bottom: 0;
+    bottom: 10px;
+}
+.boxOne{
+
+    animation: ShadowAnimation 3s infinite ease-in;
+}
+.boxTwo{
+    animation: ShadowAnimation 1s infinite ease-in;
+}
+.boxThree{
+    animation: ShadowAnimation 2.5s infinite ease-in;
+}
+.boxFour{
+    animation: ShadowAnimation 1.5s infinite ease-in;
+}
+.boxFive{
+    animation: ShadowAnimation 2s infinite ease-in;
+}
+.boxSix{
+    animation: ShadowAnimation 3.5s infinite ease-in;
+}
+.boxSeven{
+    animation: ShadowAnimation 2.75s infinite ease-in;
+}
+.boxEight{
+    animation: ShadowAnimation 3.75s infinite ease-in;
+}
+.boxNine{
+    animation: ShadowAnimation 2.25s infinite ease-in;
+}
+.boxTem{
+    animation: ShadowAnimation 1.75s infinite ease-in;
+}
+
+@keyframes AnimationOne{
+    0%{
+        height: 0%;
+    }
+    100%{
+        height: 100%;
+    }
+}
+@keyframes PictureAppearAnimation{
+    0%{
+        opacity: 0;
+        bottom: -150px;
+        width: 50%;
+        height: 50%;
+    }
+    20%{
+        opacity: 0.2;
+        bottom: -120px;
+        width: 60%;
+        height: 60%;
+    }
+    40%{
+        opacity: 0.4;
+        bottom: -90px;
+        width: 70%;
+        height: 70%;
+    }
+    60%{
+        opacity: 0.6;
+        bottom: -60px;
+        width: 80%;
+        height: 80%;
+    }
+    80%{
+        opacity: 0.8;
+        bottom: -30px;
+        width: 90%;
+        height: 90%;
+    }
+    100%{
+        opacity: 1;
+        bottom: 0;
+        width: 100%;
+        height: 100%;
+    }
+}
+
+@keyframes ShadowAnimation{
+    0%{
+        box-shadow: 0 1px 30px;
+    }
+    25%{
+        box-shadow: 0 1px 35px;
+    }
+    50%{
+        box-shadow: 0 1px 40px;
+    }
+    75%{
+        box-shadow: 0 1px 35px;
+    }
+    100%{
+        box-shadow: 0 1px 30px;
+    }
+}
+
+
+@keyframes Dissapear{
+    0%{
+        opacity: 1;
+    }
+    25%{
+        opacity: 0.8;
+    }
+    50%{
+        opacity: 0.6;
+    }
+    75%{
+        opacity: 0.3;
+    }
+    100%{
+        opacity: 0;
+    }
 }
