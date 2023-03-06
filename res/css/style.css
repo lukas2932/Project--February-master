@@ -1,0 +1,137 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Kanit&display=swap');
+
+html,
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+body{
+    background-image: url(/res/img/8.jpg);
+    background-size: cover;
+}
+#main{
+    width: 900px;
+    height: 800px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.box{
+    width: 30%;
+    height: 30%;
+    overflow: hidden;
+    border-radius: 50%;
+    padding: 10px;
+    transition: 0.2s;
+    box-shadow: 0 1px 100px; 
+}
+.box:hover{
+    background-color: rgba(0,0,0,0.15);
+}
+#ImageOne,
+#ImageTwo,
+#ImageThree,
+#ImageFour,
+#ImageFive,
+#ImageSix,
+#ImageSeven,
+#ImageEight,
+#ImageNine{
+    width: 100%;
+    height: 100%;
+    display: none;
+    transition: 0.1s;
+    position: relative;
+}
+#counter{
+    width: 100%;
+    padding: 10px;
+    font-family: 'Kanit', sans-serif;
+    font-size: 22px;
+    display: flex;
+    justify-content: space-around;
+}
+#Timer{
+    order: 1;
+}
+#Avarage{
+    order: 3;
+}
+#Score{
+    order: 2;
+}
+@keyframes PictureAppearAnimation{
+    0%{
+        opacity: 0;
+        bottom: -100px;
+    }
+    20%{
+        opacity: 0.2;
+        bottom: -80px;
+    }
+    40%{
+        opacity: 0.4;
+        bottom: -60px;
+    }
+    60%{
+        opacity: 0.6;
+        bottom: -40px;
+    }
+    80%{
+        opacity: 0.8;
+        bottom: -20px;
+    }
+    100%{
+        opacity: 1;
+        bottom: 0;
+    }
+}
+#Play{
+    color: darkred;
+    width: 100vw;
+    height: 100vh;
+    font-size: 250px;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: rgba(0,0,0,0.5);
+    font-family: 'Kanit', sans-serif;
+    bottom: 0px;
+}
+#PlayButton{
+    transition: 0.2s;
+    cursor: pointer;
+}
+#PlayButton:hover{
+    transform: scale(1.15);
+    color: brown;
+    text-shadow: 0px 1px 20px;
+}
+#DefeatLabel,
+#TryAgainButton{
+    display: none;
+    font-size: 50px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+#TryAgainButton:hover{
+    transform: scale(1.15);
+    color: brown;
+    text-shadow: 0px 1px 20px;
+}
+#TryAgainButton{
+    margin-top: 0px;
+}
+#DefeatLabel{
+    margin-bottom: 10px;
+}
+#Timerplus{
+    color: darkgreen;
+    position: absolute;
+    bottom: 0;
+}
