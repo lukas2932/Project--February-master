@@ -120,9 +120,16 @@ function MainInterval(){
         if(timerPro <= 0){
             clearInterval(MainIntervalInterval);
             Play.style.display = "flex";
-            DefeatLabel.style.display = "flex";
-            PlayButton.style.fontSize = "50px";
-            PlayButton.innerHTML = "";
+            PlayButton.innerHTML = "Play";
+            ImageOne.style.animation =  "none";
+            ImageTwo.style.animation =  "none";
+            ImageThree.style.animation =  "none";
+            ImageFour.style.animation =  "none";
+            ImageFive.style.animation =  "none";
+            ImageSix.style.animation =  "none";
+            ImageSeven.style.animation =  "none";
+            ImageEight.style.animation =  "none";
+            ImageNine.style.animation =  "none";
             ImageOne.style.display = "none";
             ImageTwo.style.display = "none";
             ImageThree.style.display = "none";
@@ -132,13 +139,17 @@ function MainInterval(){
             ImageSeven.style.display = "none";
             ImageEight.style.display = "none";
             ImageNine.style.display = "none";
-            DefeatLabel.innerHTML = "You ran out of time."
-            TryAgainButton.style.display = "flex";
+            timerPro = 60;
+            Timer.innerHTML = "Time: " + timerPro + "s";
         }
-
         console.log(randomNum);
     },415)
-}
+        PlayButton.onclick = () => {
+            Play.style.display = "none";
+            TimerInterval();
+            MainInterval();
+        }
+    }
 
 function TimeIncrease(){
     timerPro++;
@@ -228,16 +239,5 @@ ImageNine.onclick = () => {
     Score.innerHTML = "Score: " + counterPro;
     TimeIncrease();
     PlusDissapear();
-
-}
-
-
-
-TryAgainButton.onclick = () => {
-    Play.style.display = "none";
-    MainInterval();
-    TimerInterval();
-    timerPro += 60;
-    Timer.innerHTML = "Time: " + timerPro + "s"
 
 }
